@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="canproj.ActivityQuestion" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAALAGWAAAAAAAAAAAAACQAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ActivityQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.ActivityTopTen" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActivityTopTen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Arrow" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABgAAAIAAA=</HashCode>
+      <FileName>Arrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Board" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwACjKCAAGAyABCghAJMgAFEAiGkgIkFCQAQBEgAAAQ=</HashCode>
+      <FileName>Board.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.character" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAACAA=</HashCode>
+      <FileName>character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Coin" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAAAAAAAQAAAAAAAAAAAQAAAAAAABgAGAAAAA=</HashCode>
+      <FileName>Coin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.CustomDialog" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAACAAAAAA=</HashCode>
+      <FileName>CustomDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.GameOverActivity" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameOverActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Hero" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAYAAAAAAAAAAIAAAAAAYABgQAAECAA=</HashCode>
+      <FileName>Hero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.LoginActivity" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAgABAAAAQAAYAAAAAAAACAAAAAAAAAAAQAQAAA=</HashCode>
+      <FileName>LoginActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.MainActivity" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAACAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>MainActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Monster" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAAIAIAAAAYAAAAAAAAAAIAAAQAAYABgBABAAAA=</HashCode>
+      <FileName>Monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.NotificationReceiver" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NotificationReceiver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Pit" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAYAACAAAAAAAAAAAAAAAABgAGIAAAA=</HashCode>
+      <FileName>Pit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.StartActivity" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAQAAAAAiAAAAAAAAAQCAACAAAAAAAABAQAQA=</HashCode>
+      <FileName>StartActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.User" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.UserAdapter" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAABAAAAgAA=</HashCode>
+      <FileName>UserAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Resources.drawable.SettingsActivity" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAABABAAAAAAAgAAAAAAAAAJCAAAAAAAAAAAhAAgAQ=</HashCode>
+      <FileName>Resources\drawable\SettingsActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Resources.layout.BroadcastBattery" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAQA=</HashCode>
+      <FileName>Resources\layout\BroadcastBattery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Resources.layout.ClassQuestion" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAQAAAAAgHAAAAAAAAA=</HashCode>
+      <FileName>Resources\layout\ClassQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Resources.layout.RegisterActivity" Collapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAQAAAAAAAACAAAAAAAAAAAAAYAAA=</HashCode>
+      <FileName>Resources\layout\RegisterActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="canproj.Resources.LoginTable" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAgAAAAIAAEAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Resources\LoginTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,21 @@
+﻿<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"     android:layout_width="match_parent"     android:layout_height="match_parent"  
+   android:orientation="vertical" 
+    > 
+    <TextView         android:text=" Music"         android:layout_width="wrap_content"         android:layout_height="wrap_content"         android:textSize="30sp"         android:layout_gravity="center" 
+        /> 
+    <SeekBar         android:layout_width="match_parent"         android:layout_height="30dp"         android:background="#177ee6"         android:id="@+id/sb" 
+        /> 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="battery level:"
+        android:id="@+id/textViewBtry"/>
+   <Button
+         android:text="Return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/rtrn">
+    </Button>
+
+</LinearLayout> 

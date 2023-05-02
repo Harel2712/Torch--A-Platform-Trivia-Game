@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="132.5dp"
+        android:src="@drawable/bigdog"
+        android:layout_marginRight="0.0dp"
+        android:layout_marginBottom="79.5dp"
+        android:layout_marginLeft="0.0dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView1"
+        android:layout_marginTop="0.0dp" 
+
+        >
+
+    </ImageView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="250px"
+        android:id="@+id/btnRight"
+        android:text="start game"
+        android:layout_centerHorizontal="true"
+>
+
+    </Button>
+
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:id="@+id/batteryShow"/>
+
+
+
+</LinearLayout>
