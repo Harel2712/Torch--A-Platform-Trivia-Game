@@ -85,14 +85,13 @@
     <Compile Include="Resources\layout\ClassQuestion.cs" />
     <Compile Include="Resources\layout\RegisterActivity.cs" />
     <Compile Include="Resources\LoginTable.cs" />
+    <Compile Include="Resources\MediaService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartActivity.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="UserAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -257,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\XMLUserAdapter.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\bigcoin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -23,10 +23,10 @@ namespace canproj
             NotificationManager notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService);
             notificationManager.CreateNotificationChannel(channel);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "channel_id")
-    .SetSmallIcon(Resource.Drawable.torch)
-    .SetContentTitle("Hi")
-    .SetContentText("You Lost!!!")
-    .SetAutoCancel(true);
+            .SetSmallIcon(Resource.Drawable.torch)
+            .SetContentTitle("Hello!")
+            .SetContentText("You are close to beat your all time best score!")
+            .SetAutoCancel(true);
 
             Notification notification = builder.Build();
             notificationManager.Notify(1, notification);

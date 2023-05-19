@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Org.Apache.Commons.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,9 +34,7 @@ namespace canproj
 
         private void Enter_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent(context, typeof(ActivityTopTen));
-            intent.SetFlags(ActivityFlags.ReorderToFront); // אינטנט בלי לאתחל את המסך אליו הוא מגיע
-            context.StartActivity(intent);
+            Cancel();
         }
     }
 }

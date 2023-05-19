@@ -28,8 +28,18 @@ namespace canproj
             opt2 = FindViewById<Button>(Resource.Id.option2);
             opt3 = FindViewById<Button>(Resource.Id.option3);
             opt4 = FindViewById<Button>(Resource.Id.option4);
+            ClassQuestion firstquestion = new ClassQuestion("is?", "no", "no", "yes", "no", 3);
+            ClassQuestion secondquestion = new ClassQuestion("is?", "yes", "no", "no", "no", 1);
 
-            question1 = new ClassQuestion("is?", "no", "no", "yes", "no",3);
+            int num = Intent.GetIntExtra("number",-1);
+            if (num == 1)
+            {
+                question1 = firstquestion;
+            } else if (num == 2)
+            {
+                question1 = secondquestion;
+
+            }
 
             opt1.Text = question1.option1;
             opt2.Text = question1.option2;
@@ -47,9 +57,7 @@ namespace canproj
         {
             if (question1.RightAnswer == 4)
             {
-                Intent intent = new Intent(this,typeof(MainActivity));
-                intent.PutExtra("score", 2);
-                StartActivity(intent);
+                AddScore(3);
 
             }
         }
@@ -69,9 +77,8 @@ namespace canproj
         {
             if (question1.RightAnswer == 2)
             {
-                Intent intent = new Intent(this, typeof(MainActivity));
-                intent.PutExtra("score", 2);
-                StartActivity(intent);
+                AddScore(3);
+
             }
         }
 
@@ -79,9 +86,8 @@ namespace canproj
         {
             if (question1.RightAnswer == 1)
             {
-                Intent intent = new Intent(this, typeof(MainActivity));
-                intent.PutExtra("score", 2);
-                StartActivity(intent);
+                AddScore(3);
+
             }
         }
         public void AddScore(int score)
@@ -96,6 +102,12 @@ namespace canproj
             var data1 = data.Where(x => x.username == User_Name).FirstOrDefault();
 
             data1.CurrentScore +=score;
+            if (data1.CurrentScore > data1.score)
+            {
+                data1.score = data1.CurrentScore;
+                db.Update(data1);
+
+            }
             db.Update(data1);
             intent.SetFlags(ActivityFlags.ReorderToFront); // אינטנט בלי לאתחל את המסך אליו הוא מגיע
             StartActivity(intent);

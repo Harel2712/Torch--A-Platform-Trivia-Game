@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using canproj.Resources;
 
 namespace canproj
 {
@@ -22,6 +23,9 @@ namespace canproj
 
             //sf=new SurfaceBoard(this);
             //SetContentView(sf);
+            Intent intent = new Intent(this, typeof(MediaService));
+            StartService(intent);
+
 
             board = new Board(this,Intent);
             SetContentView(board);

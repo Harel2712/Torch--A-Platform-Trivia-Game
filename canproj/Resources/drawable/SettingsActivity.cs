@@ -16,7 +16,6 @@ namespace canproj.Resources.drawable
     [Activity(Label = "SettingsActivity")]
     public class SettingsActivity : Activity
     {
-        MediaPlayer bgMusic;
         SeekBar seekbar;
         AudioManager audioManager;
         Button retrn;
@@ -36,7 +35,7 @@ namespace canproj.Resources.drawable
             audioManager =(AudioManager)GetSystemService(Context.AudioService);
             int max = audioManager.GetStreamMaxVolume(Stream.Music);
             seekbar.Max = max;
-            audioManager.SetStreamVolume(Stream.Music, 0,0);
+            audioManager.SetStreamVolume(Stream.Music, 5,0);
             seekbar.ProgressChanged += Seekbar_ProgressChanged;
             retrn = FindViewById<Button>(Resource.Id.rtrn);
             retrn.Click += Retrn_Click;
@@ -48,7 +47,7 @@ namespace canproj.Resources.drawable
         private void Retrn_Click(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(MainActivity));
-            //intent.PutExtra("score", 2);
+          
             intent.SetFlags(ActivityFlags.ReorderToFront); // אינטנט בלי לאתחל את המסך אליו הוא מגיע
             StartActivity(intent);
         }

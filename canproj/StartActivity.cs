@@ -17,18 +17,18 @@ using static Xamarin.Essentials.Platform;
 using Context = Android.Content.Context;
 using Intent = Android.Content.Intent;
 
+
 namespace canproj
 {
-    [Activity(Label = "StartActivity"
-        )]
+    [Activity(Label = "StartActivity")]
     public class StartActivity : Activity
     {
         Button move;
         Animation animFadeIn;
         ImageView ImageView;
-        BroadcastBattery bdBtry;
+
         int bl;
-        TextView tv1;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,19 +39,17 @@ namespace canproj
             ImageView.StartAnimation(animFadeIn);
             move.Click += Move_Click;
 
-            tv1 = FindViewById<TextView>(Resource.Id.batteryShow);
 
-            bdBtry=new BroadcastBattery(tv1);
-            RegisterReceiver(bdBtry, new IntentFilter(Intent.ActionBatteryChanged));
-
+            BatteryManager batteryManager = (BatteryManager)GetSystemService(BatteryService);
+            int batteryLevel = batteryManager.GetIntProperty((int)BatteryProperty.Capacity);
 
 
-            Toast.MakeText(this, "Battery Level: " + bdBtry.batteryLevel, ToastLength.Short).Show();
 
-            bl = (int)bdBtry.batteryLevel;
-            if (bl<21) {
-                alertbtry();
+            Toast.MakeText(this, "Battery Level: " + 0, ToastLength.Short).Show();
 
+            if (batteryLevel<21) {
+                alertbtry(batteryLevel);
+                Toast.MakeText(this, "yes", ToastLength.Short);
 
             }
 
@@ -64,7 +62,6 @@ namespace canproj
             var data1 = data.Where(x => x.username == name ).FirstOrDefault();
             data1.CurrentScore = 0;
             db.Update(data1);
-            // Create your application here
         }
 
         private void Move_Click(object sender, EventArgs e)
@@ -76,13 +73,12 @@ namespace canproj
             this.StartActivity(move);
         }
 
-        public void alertbtry()
+        public void alertbtry(int batterylvl)
         {
-            if (bl < 21)
-            {
+           
                 AlertDialog.Builder alertDiag = new AlertDialog.Builder(this);
             alertDiag.SetTitle("Low battery");
-            alertDiag.SetMessage("your phone's battery is low("+ bl+ ") are you sure you wants to play?");
+            alertDiag.SetMessage("your phone's battery is low("+batterylvl + ") are you sure you wants to play?");
        
             alertDiag.SetCancelable(true);
 
@@ -105,20 +101,10 @@ namespace canproj
             Dialog diag = alertDiag.Create();
            
                 diag.Show();
-            }
+            
 
         }
-        protected override void OnResume()
-        {
-            base.OnResume();
-
-            RegisterReceiver(bdBtry, new IntentFilter(Intent.ActionBatteryChanged));
-        }
-        protected override void OnPause()
-        {
-            UnregisterReceiver(bdBtry);
-            base.OnPause();
-        }
+       
 
     }
 }

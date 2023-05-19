@@ -26,6 +26,10 @@ namespace canproj
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.GameOverXML);
 
+            Intent mintent = new Intent(this, typeof(MediaService));
+            StopService(mintent);
+
+
             restart = FindViewById<Button>(Resource.Id.btnRestart);
             restart.Click += Restart_Click;
 
@@ -36,57 +40,37 @@ namespace canproj
             var data = db.Table<LoginTable>(); //Call Table  
             var data1 = data.Where(x => x.username == name).FirstOrDefault();
 
-   
+
+            
+            NotificationChannel channel = new NotificationChannel("channel_id", "Channel Name", NotificationImportance.Default);
+            NotificationManager notificationManager = (NotificationManager)this.GetSystemService(Context.NotificationService);
+            notificationManager.CreateNotificationChannel(channel);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "channel_id")
+            .SetSmallIcon(Resource.Drawable.torch)
+            .SetContentTitle("Hi!")
+            .SetContentText("Come back to play")
+            .SetAutoCancel(true);
+
+            Notification notification = builder.Build();
+            notificationManager.Notify(1, notification);
+
+            //alarm manager use- יצירת הודעה שהמתשמש קרוב לשבור את השיא שלו אחרי שעה שהוא משחק
             Intent intent = new Intent(this, typeof(NotificationReceiver));
             PendingIntent pendingIntent = PendingIntent.GetBroadcast(this, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
-
-            Intent intent2 = new Intent(this, typeof(NotificationReceiver));
-            PendingIntent pendingIntent2 = PendingIntent.GetBroadcast(this, 0, intent2, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
-
             AlarmManager alarmManager = (AlarmManager)this.GetSystemService(AlarmService);
-            AlarmManager alarmManager2 = (AlarmManager)this.GetSystemService(AlarmService);
-
-            //alarmManager.SetRepeating(AlarmType.RtcWakeup, SystemClock.ElapsedRealtime() , 1000, pendingIntent);
             var calendar = Calendar.Instance;
             calendar.TimeInMillis = Java.Lang.JavaSystem.CurrentTimeMillis();
-            calendar.Add(CalendarField.Minute, 1);
-            long firstAlarmTime = calendar.TimeInMillis;
-
-            var currentTimeMillis = Java.Lang.JavaSystem.CurrentTimeMillis();
-
-            var calendar2 = Calendar.Instance;
-                calendar2.Add(CalendarField.HourOfDay, 1);
-            long secondAlarmTime = calendar2.TimeInMillis;
-
-
-
-            alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, currentTimeMillis, pendingIntent);
-
-            //alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, firstAlarmTime, pendingIntent);
-            //alarmManager2.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, secondAlarmTime, pendingIntent2);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            calendar.Add(CalendarField.Hour, 1);
+            if (data1.score - data1.CurrentScore < 5)
+            {
+                alarmManager.SetExact(AlarmType.RtcWakeup, calendar.TimeInMillis, pendingIntent);
+            }
 
             data1.CurrentScore = 0;
             db.Update(data1);
 
 
-            // Create your application here
+           
         }
 
         private void Restart_Click(object sender, EventArgs e)

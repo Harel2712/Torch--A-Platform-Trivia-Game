@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using canproj.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,12 @@ using System.Text;
 
 namespace canproj
 {
-    internal class UserAdapter:BaseAdapter<User>
+    internal class UserAdapter:BaseAdapter<LoginTable>
     {
-        private List<User> userList;
+        private List<LoginTable> userList;
         private LayoutInflater layoutInflater;
 
-        public UserAdapter(Context context, List<User> userList)
+        public UserAdapter(Context context, List<LoginTable> userList)
         {
             this.userList = userList;
             this.layoutInflater = LayoutInflater.From(context);
@@ -27,7 +28,7 @@ namespace canproj
             get { return userList.Count; }
         }
 
-        public override User this[int position]
+        public override LoginTable this[int position]
         {
             get { return userList[position]; }
         }
@@ -53,9 +54,9 @@ namespace canproj
                 viewHolder = (ViewHolder)convertView.Tag;
             }
 
-            User user = userList[position];
-            viewHolder.NameTextView.Text = position+1+ ". " +user.User_Name;
-            viewHolder.EmailTextView.Text = "score: " + user.Best_Score;
+            LoginTable user = userList[position];
+            viewHolder.NameTextView.Text = position+1+ ". " +user.username;
+            viewHolder.EmailTextView.Text = "score: " + user.score;
 
 
             return convertView;

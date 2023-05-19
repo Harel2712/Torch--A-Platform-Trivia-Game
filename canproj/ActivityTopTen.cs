@@ -24,21 +24,16 @@ namespace canproj
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.XMLTopTen);
-
+            
             string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3");
             var db = new SQLiteConnection(dpPath);
-            db.CreateTable<User>();
-            string name = Intent.GetStringExtra("UNAME");
-            User thisUser = new User(name);
-            User existingUser = db.Table<User>().Where(u => u.User_Name == thisUser.User_Name).FirstOrDefault();
-            if (existingUser == null)
-            {
-                db.Insert(thisUser);
-            }
-              
 
-            List<User> users = db.Table<User>().ToList();
-            users.Sort((a, b) => b.Best_Score.CompareTo(a.Best_Score));
+
+
+
+
+            List<LoginTable> users = db.Table<LoginTable>().ToList();
+            users.Sort((a, b) => b.score.CompareTo(a.score));
 
             listnames = FindViewById<ListView>(Resource.Id.listview);
             

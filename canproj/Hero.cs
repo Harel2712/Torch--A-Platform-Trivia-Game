@@ -28,13 +28,13 @@ namespace canproj
             this.y = y;
             this.character = character;
         }
-        public bool CheckCollisons(Monster monster)// בדיקה המחזירה אמת או שקר האם הדמות התנגשה עם מפלצת
-        {
-            if(x+60==monster.GetX()-40 && y-60==monster.GetY()+40)
-                return true;
-            else
-                return false;
-        }
+        //public bool CheckCollisons(Monster monster)// בדיקה המחזירה אמת או שקר האם הדמות התנגשה עם מפלצת
+        //{
+        //    if(x+60==monster.GetX()-40 && y-60==monster.GetY()+40)
+        //        return true;
+        //    else
+        //        return false;
+        //}
         public float GetX()// קבלת מיקום Y
         {
             return x;
@@ -48,19 +48,6 @@ namespace canproj
         public Bitmap GetHero() { return character; }
         public void SetHero(Bitmap bitm) { this.character = bitm; }
 
-        public bool CheckCoinCollisons(Coin coin)// בדיקה שמחזירה אמת או שקר האם הדמות אספה מטבע
-        {
-            if (coin.Getx() - 50 == x && coin.Gety() == y)
-            {
-                coin.Setcoin(BitmapFactory.DecodeResource(Android.Content.Res.Resources.System, Resource.Drawable.ppnng));
-                coin.setx(-1);
-                return true;
-
-            }
-
-            else
-                return false;
-        }
       
         
     }

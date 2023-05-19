@@ -21,6 +21,8 @@ namespace canproj.Resources.layout
         public TextView tv;
         public int batteryLevel { get; set; }
 
+       
+
         public BroadcastBattery()
         {
         }
@@ -39,13 +41,21 @@ namespace canproj.Resources.layout
             
             if (tv != null)
             {
-                tv.Text = tv.Text+ bl +"%";
+                tv.Text = bl.ToString();
             }
 
+            Intent broadcastIntent = new Intent("com.example.BatteryLevelBroadcast");
+            broadcastIntent.PutExtra("BatteryLevel", batteryLevel);
+            context.SendBroadcast(broadcastIntent);
 
 
 
 
+
+        }
+        public string getbtrylvl()
+        {
+            return tv.Text;
         }
       
        

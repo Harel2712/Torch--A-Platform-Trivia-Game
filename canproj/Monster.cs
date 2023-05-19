@@ -35,12 +35,12 @@ namespace canproj
         {
             return y;
         }
-        public void Move(int Minx, int MaxX)// תזוזה של מפלצת
-        {
-            x += speed;
-            if(x<Minx || x>MaxX)
-                speed=-speed;
-        }
+        //public void Move(int Minx, int MaxX)// תזוזה של מפלצת
+        //{
+        //    x += speed;
+        //    if(x<Minx || x>MaxX)
+        //        speed=-speed;
+        //}
         public Bitmap GetMonster() { return this.character; }
         public void SetMonster(Bitmap character) { this.character = character; }
         public void setx(int x) { this.x = x; }

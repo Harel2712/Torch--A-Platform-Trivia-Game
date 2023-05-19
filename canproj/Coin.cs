@@ -32,5 +32,12 @@ namespace canproj
         public void Setcoin(Bitmap coin) { this.coin = coin; }
         public void setx(int x) { this.x = x; } 
         
+        public int HowMuchScore()
+        {
+            if (this.IsBig)
+                return 3;
+            else
+                return 1;
+        }
     }
 }
