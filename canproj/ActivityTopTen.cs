@@ -34,7 +34,7 @@ namespace canproj
 
             List<LoginTable> users = db.Table<LoginTable>().ToList();
             users.Sort((a, b) => b.score.CompareTo(a.score));
-
+            
             listnames = FindViewById<ListView>(Resource.Id.listview);
             
             UserAdapter adapter = new UserAdapter(this, users);

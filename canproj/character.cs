@@ -14,9 +14,9 @@ namespace canproj
 {
     internal abstract class character
     {
-        float x { get; set; }//מיקום
-        float y { get; set; }//מיקום
-        Bitmap Character { get; set; }// תצוגה על ידי תמונה
+        public float x { get; set; }//מיקום
+        public float y { get; set; }//מיקום
+        public Bitmap Character { get; set; }// תצוגה על ידי תמונה
 
         protected character(float x, float y, Bitmap character)// פונקציה בונה
         {

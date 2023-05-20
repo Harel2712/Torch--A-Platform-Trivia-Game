@@ -36,26 +36,14 @@ namespace canproj.Resources.layout
 
 
             int bl = intent.GetIntExtra("level", 0);
-            
+
             this.batteryLevel = bl;
-            
+
             if (tv != null)
             {
-                tv.Text = bl.ToString();
+                tv.Text = "battery level: " + bl.ToString() + "%";
             }
 
-            Intent broadcastIntent = new Intent("com.example.BatteryLevelBroadcast");
-            broadcastIntent.PutExtra("BatteryLevel", batteryLevel);
-            context.SendBroadcast(broadcastIntent);
-
-
-
-
-
-        }
-        public string getbtrylvl()
-        {
-            return tv.Text;
         }
       
        

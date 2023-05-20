@@ -3,7 +3,7 @@
   <Class Name="canproj.ActivityQuestion" Collapsed="true">
     <Position X="7.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAALAGWAAAAAAAAAAAAACQAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAALAGWAAAAAAAAAAAAACQAQAABAAAAAAAAAAA=</HashCode>
       <FileName>ActivityQuestion.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,7 +24,7 @@
   <Class Name="canproj.Board" Collapsed="true">
     <Position X="5.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AwACjKCAAGAyABCghAJMgAFEAiGkgIkFCQAQBEgAAAA=</HashCode>
+      <HashCode>AwACjKCAAGAiAxCgBANMgAEEAimkgIkBDQAQBMgAAAA=</HashCode>
       <FileName>Board.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="canproj.Coin" Collapsed="true">
     <Position X="3.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABEAAAAAAAAQAAAAAAAAAAAQAAAAAAABgAGAAAAA=</HashCode>
+      <HashCode>CAAABEAAAAAAAAQAAAAAAAAAAAQAAAAAAABgAGAAAAA=</HashCode>
       <FileName>Coin.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="canproj.Hero" Collapsed="true">
     <Position X="4.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAYAAAAAAAAAAIAAAAAAYABgQAAECAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAYAAAQAAEAAA=</HashCode>
       <FileName>Hero.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +80,7 @@
   <Class Name="canproj.Monster" Collapsed="true">
     <Position X="2.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIgAAIAIAAAAYAAAAAAAAAAIAAAQAAYABgBABAAAA=</HashCode>
+      <HashCode>AAAAgAAIAAAAAAYAAAAAAAAAAIAAAQAAYAAABABAAAA=</HashCode>
       <FileName>Monster.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -101,15 +101,8 @@
   <Class Name="canproj.StartActivity" Collapsed="true">
     <Position X="5.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAQAAAAAiAAAAAAAAAQCAACAAAAAAAABAQAQA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAAiAAAAAAAAAQCAACAAAAAAAAAAQAAA=</HashCode>
       <FileName>StartActivity.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="canproj.User" Collapsed="true">
-    <Position X="9.75" Y="7" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAAAA=</HashCode>
-      <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="canproj.UserAdapter" Collapsed="true">

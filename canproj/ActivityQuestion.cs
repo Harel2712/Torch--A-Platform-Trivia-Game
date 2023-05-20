@@ -20,6 +20,7 @@ namespace canproj
     {
         Button opt1,opt2,opt3,opt4;
         ClassQuestion question1;
+        TextView questText;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -28,8 +29,12 @@ namespace canproj
             opt2 = FindViewById<Button>(Resource.Id.option2);
             opt3 = FindViewById<Button>(Resource.Id.option3);
             opt4 = FindViewById<Button>(Resource.Id.option4);
-            ClassQuestion firstquestion = new ClassQuestion("is?", "no", "no", "yes", "no", 3);
+            questText = FindViewById<TextView>(Resource.Id.questText);
+
+            ClassQuestion firstquestion = new ClassQuestion("you're on a astroeid and don't have water where can you get some?", "You Can't!", "Go to the nearest planet", "The Astroied is made of water", "pray", 3);
             ClassQuestion secondquestion = new ClassQuestion("is?", "yes", "no", "no", "no", 1);
+
+
 
             int num = Intent.GetIntExtra("number",-1);
             if (num == 1)
@@ -41,6 +46,7 @@ namespace canproj
 
             }
 
+            questText.Text = question1.question;
             opt1.Text = question1.option1;
             opt2.Text = question1.option2;
             opt3.Text = question1.option3;
@@ -60,6 +66,10 @@ namespace canproj
                 AddScore(3);
 
             }
+            else
+            {
+                AddScore(0);
+            }
         }
 
         private void Opt3_Click(object sender, EventArgs e)
@@ -71,6 +81,10 @@ namespace canproj
             
 
             }
+            else
+            {
+                AddScore(0);
+            }
         }
 
         private void Opt2_Click(object sender, EventArgs e)
@@ -80,6 +94,10 @@ namespace canproj
                 AddScore(3);
 
             }
+            else
+            {
+                AddScore(0);
+            }
         }
 
         private void Opt1_Click(object sender, EventArgs e)
@@ -88,6 +106,10 @@ namespace canproj
             {
                 AddScore(3);
 
+            }
+            else
+            {
+                AddScore(0);
             }
         }
         public void AddScore(int score)

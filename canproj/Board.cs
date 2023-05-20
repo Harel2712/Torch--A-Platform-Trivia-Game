@@ -32,7 +32,7 @@ namespace canproj
         float jx;
         bool WouldJump;
         Pit pit1,pit2,pit3; 
-        Coin coin1, InfoTreasure1, Quest1, Bigcoin,Quest2;
+        Coin coin1, InfoTreasure1, Quest1, Bigcoin,Quest2, coin3;
         int score;
         Hero hero;
         Monster m1,m2;
@@ -55,12 +55,6 @@ namespace canproj
         public Board(Context context, Intent intent) : base(context)
         {
             
-
-
-
-
-         //   handler = new Handler();
-
             rBound = 0;
             lBound = 900;
             wr = 10;
@@ -92,6 +86,9 @@ namespace canproj
             jumparw = BitmapFactory.DecodeResource(Resources, Resource.Drawable.newuparrow);
             coin1 = new Coin(BitmapFactory.DecodeResource(Resources, Resource.Drawable.coinew3), false, 300, 500);
             Bigcoin = new Coin(BitmapFactory.DecodeResource(Resources, Resource.Drawable.coinew3), false, 2000, 500);
+            coin3 = new Coin(BitmapFactory.DecodeResource(Resources, Resource.Drawable.coinew3), true, 4000, 500);
+
+
 
             hero = new Hero(50, 500, BitmapFactory.DecodeResource(Resources, Resource.Drawable.torch));
             pit1 = new Pit( BitmapFactory.DecodeResource(Resources, Resource.Drawable.WhiteRec), 1700,700);
@@ -108,7 +105,6 @@ namespace canproj
 
 
 
-            //intent = new Intent(context, typeof(LVL2Activity));
 
 
 
@@ -140,6 +136,8 @@ namespace canproj
             canvas.DrawBitmap(Quest1.Getcoin(), Quest1.Getx(), Quest1.Gety(), null);
             canvas.DrawBitmap(Bigcoin.Getcoin(), Bigcoin.Getx(), Bigcoin.Gety(), null);
             canvas.DrawBitmap(Quest2.Getcoin(),Quest2.Getx(), Quest2.Gety(), null);
+            canvas.DrawBitmap(coin3.Getcoin(), coin3.Getx(), coin3.Gety(), null);
+
 
             dpPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3"); //Call Database  
             var db = new SQLiteConnection(dpPath);
@@ -263,6 +261,23 @@ namespace canproj
                 Bigcoin.Setcoin(BitmapFactory.DecodeResource(Resources, Resource.Drawable.ppnng));
 
                 Bigcoin.setx(-999);
+            }
+
+            if (hero.GetX() + 50 > coin3.Getx() && hero.GetX() + 50 < coin3.Getx() + 50 && coin3.Gety() == hero.GetY()) //מטבע
+            {
+                coined.Start();
+                score = score + coin3.HowMuchScore();
+                data1.CurrentScore = score;
+                db.Update(data1);
+
+                if (score > data1.score)
+                {
+                    data1.score = score;
+                    db.Update(data1);
+                }
+                coin3.Setcoin(BitmapFactory.DecodeResource(Resources, Resource.Drawable.ppnng));
+
+                coin3.setx(-999);
             }
 
 
@@ -396,6 +411,8 @@ namespace canproj
 
                     coin1.setx(coin1.Getx() - 10);
                     Bigcoin.setx(Bigcoin.Getx() - 10);
+                    coin3.setx(coin3.Getx() - 10);
+
                     InfoTreasure1.setx(InfoTreasure1.Getx() - 10);
                     Quest1.setx(Quest1.Getx() - 10);
                     Quest2.setx(Quest2.Getx() - 10);
@@ -425,6 +442,8 @@ namespace canproj
 
                     coin1.setx(coin1.Getx() + 10);
                     Bigcoin.setx(Bigcoin.Getx() + 10);
+                    coin3.setx(coin3.Getx() + 10);
+
                     InfoTreasure1.setx(InfoTreasure1.Getx() + 10);
                     Quest1.setx(Quest1.Getx() + 10);
                     Quest2.setx(Quest2.Getx() + 10);
@@ -549,6 +568,10 @@ namespace canproj
 
 
         }
+
+        
+
+
         public void pitcollison(Pit pit)
         {
             if (hero.GetY() == 500 && (hero.GetX() + 50 > pit.Getx() && hero.GetX() + 50 < pit.Getx() + 200) || hero.GetY() == 500 && (hero.GetX() + 50 > pit.Getx() && hero.GetX() + 50 < pit.Getx() + 200))

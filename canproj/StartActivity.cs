@@ -27,7 +27,6 @@ namespace canproj
         Animation animFadeIn;
         ImageView ImageView;
 
-        int bl;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

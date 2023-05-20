@@ -19,14 +19,12 @@ namespace canproj
 {
     internal class Hero : character// ירושה ממחלקה
     {
-        float x { get; set; }//מיקום
-        float y { get; set; }//מיקום
-        Bitmap character { get; set; }// ייצוג על ידי תמונת הדמות
+       
         public Hero(float x, float y, Bitmap character) : base(x, y, character)// פונקציה בונה
         {
             this.x = x;
             this.y = y;
-            this.character = character;
+            this.Character = character;
         }
         //public bool CheckCollisons(Monster monster)// בדיקה המחזירה אמת או שקר האם הדמות התנגשה עם מפלצת
         //{
@@ -45,8 +43,8 @@ namespace canproj
         }
         public void SetX(float x) { this.x = x; }
         public void SetY(float y) { this.y = y; }
-        public Bitmap GetHero() { return character; }
-        public void SetHero(Bitmap bitm) { this.character = bitm; }
+        public Bitmap GetHero() { return Character; }
+        public void SetHero(Bitmap bitm) { this.Character = bitm; }
 
       
         

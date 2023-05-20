@@ -41,7 +41,6 @@ namespace canproj.Resources.drawable
             retrn.Click += Retrn_Click;
 
 
-            // Create your application here
         }
 
         private void Retrn_Click(object sender, EventArgs e)

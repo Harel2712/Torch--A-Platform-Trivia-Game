@@ -11,6 +11,7 @@
         android:text="HERE'S A QUESTION"
         android:textSize="30sp"
         android:layout_gravity="center"
+        android:id="@+id/questText"
 />
     <Button
         android:layout_width="match_parent"
