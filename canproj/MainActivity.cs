@@ -13,22 +13,19 @@ namespace canproj
     public class MainActivity : Activity
     {
        
-        Board board;
+        Board board;// יצירת קנבס
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+           
 
-            //sf=new SurfaceBoard(this);
-            //SetContentView(sf);
             Intent intent = new Intent(this, typeof(MediaService));
             StartService(intent);
 
 
-            board = new Board(this,Intent);
-            SetContentView(board);
+            board = new Board(this,Intent);// מימוש הקנבס
+            SetContentView(board);//  העברת ההצגה הגרפית לקנבס
           
         }
 

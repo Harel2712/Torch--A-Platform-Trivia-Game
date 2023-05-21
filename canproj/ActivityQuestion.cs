@@ -30,12 +30,12 @@ namespace canproj
             opt3 = FindViewById<Button>(Resource.Id.option3);
             opt4 = FindViewById<Button>(Resource.Id.option4);
             questText = FindViewById<TextView>(Resource.Id.questText);
-
+            // הגדרת שאלות
             ClassQuestion firstquestion = new ClassQuestion("you're on a astroeid and don't have water where can you get some?", "You Can't!", "Go to the nearest planet", "The Astroied is made of water", "pray", 3);
             ClassQuestion secondquestion = new ClassQuestion("is?", "yes", "no", "no", "no", 1);
 
 
-
+            // קבלת מספר השאלה מהאינטנט
             int num = Intent.GetIntExtra("number",-1);
             if (num == 1)
             {
@@ -56,7 +56,6 @@ namespace canproj
             opt2.Click += Opt2_Click;
             opt3.Click += Opt3_Click;
             opt4.Click += Opt4_Click;
-            // Create your application here
         }
 
         private void Opt4_Click(object sender, EventArgs e)
@@ -112,22 +111,22 @@ namespace canproj
                 AddScore(0);
             }
         }
-        public void AddScore(int score)
+        public void AddScore(int score)// פונקציה להוספת ניקוד ואינטנט חזרה למשחק
         {
             Intent intent = new Intent(this, typeof(MainActivity));
 
             string User_Name = Intent.GetStringExtra("UNAME");
 
-            string dpPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3");
+            string dpPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3");// קריאה לדאטהבייס
             var db = new SQLiteConnection(dpPath);
-            var data = db.Table<LoginTable>();
-            var data1 = data.Where(x => x.username == User_Name).FirstOrDefault();
+            var data = db.Table<LoginTable>();// קריאה לטבלה
+            var data1 = data.Where(x => x.username == User_Name).FirstOrDefault();// התאמת המשתמש המחובר
 
-            data1.CurrentScore +=score;
+            data1.CurrentScore +=score;// הוספת ניקוד למשתמש
             if (data1.CurrentScore > data1.score)
             {
                 data1.score = data1.CurrentScore;
-                db.Update(data1);
+                db.Update(data1);// עדכון בדאטהבייס
 
             }
             db.Update(data1);

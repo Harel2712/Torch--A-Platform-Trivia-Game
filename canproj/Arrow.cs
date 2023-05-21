@@ -14,10 +14,10 @@ namespace canproj
 {
     internal class Arrow
     {
-        int x { get; set; }// מיקום
-        int y { get; set; }// מיקום
-        Bitmap arrow { get; set; }// יצוג חץ
-        bool isRight { get; set; }// האם החץ פונה ימינה או לא
+        public int x { get; set; }// מיקום
+        public int y { get; set; }// מיקום
+        public Bitmap arrow { get; set; }// יצוג חץ
+        public bool isRight { get; set; }// האם החץ פונה ימינה או לא
 
         public Arrow(int x, int y, Bitmap arrow, bool isRight)// פונקציה בונה
         {

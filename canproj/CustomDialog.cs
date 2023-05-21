@@ -13,7 +13,7 @@ using System.Text;
 namespace canproj
 {
     [Activity(Label = "FirstDialogActivity")]
-    public class CustomDialog : Dialog
+    public class CustomDialog : Dialog // הורשה מדיאלוג
     {
         Button Enter;
         private Context context;

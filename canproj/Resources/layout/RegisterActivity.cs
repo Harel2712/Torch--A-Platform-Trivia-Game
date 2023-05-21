@@ -27,7 +27,6 @@ namespace canproj.Resources.layout
             txtusernamer = FindViewById<EditText>(Resource.Id.usernamer);
             txtpasswordr = FindViewById<EditText>(Resource.Id.passwordr);
             btncreater.Click += Btncreate_Click;
-            // Create your application here
         }
 
         private void Btncreate_Click(object sender, EventArgs e)
@@ -37,12 +36,12 @@ namespace canproj.Resources.layout
                 string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3");
                 var db = new SQLiteConnection(dpPath);
                 db.CreateTable<LoginTable>();
-                LoginTable tbl = new LoginTable();
+                LoginTable tbl = new LoginTable(); // יצירת משתמש ריק
                 tbl.username = txtusernamer.Text;
                 tbl.password = txtpasswordr.Text;
                 tbl.score = 0;
                 tbl.CurrentScore = 0;
-                db.Insert(tbl);
+                db.Insert(tbl);// הכנסת המשתמש לדאטהבייס
                 Toast.MakeText(this, "Record Added Successfully...,", ToastLength.Short).Show();
                 Finish();
             }

@@ -12,10 +12,10 @@ using System.Text;
 
 namespace canproj
 {
-    internal class Monster : character// ירושה ממחלקה
+    internal class Monster : character//ירושה ממחלקת דמות
     {
        
-        int speed { get; set; }// מהירות
+        public int speed { get; set; }// מהירות
         bool IsSquashed;
         public Monster(int x, int y, Bitmap character, int speed,bool IsSquash) : base(x, y, character)// פונקציה בונה
         {

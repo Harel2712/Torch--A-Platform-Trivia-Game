@@ -18,9 +18,9 @@ namespace canproj.Resources.layout
         public string option2 { get; set; }
         public string option3 { get; set; }
         public string option4 { get; set; }
-        public int RightAnswer { get; set; }
+        public int RightAnswer { get; set; } //מספר התשובה הנכונה
 
-        public ClassQuestion(string question, string option1, string option2, string option3, string option4, int rightAnswer)
+        public ClassQuestion(string question, string option1, string option2, string option3, string option4, int rightAnswer)// קונסטרקטור
         {
             this.question = question;
             this.option1 = option1;

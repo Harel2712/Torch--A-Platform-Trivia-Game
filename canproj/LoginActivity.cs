@@ -49,16 +49,17 @@ namespace canproj
                 string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3"); //Call Database  
                 var db = new SQLiteConnection(dpPath);
                 var data = db.Table<LoginTable>(); //Call Table  
-                var data1 = data.Where(x => x.username == txtusername.Text && x.password == txtPassword.Text).FirstOrDefault(); //Linq Query  
+                var data1 = data.Where(x => x.username == txtusername.Text && x.password == txtPassword.Text).FirstOrDefault(); //בדיקה האם משתמש רשום
                 if (data1 != null)
                 {
                    
                     Toast.MakeText(this, "Login Success", ToastLength.Short).Show();
 
                     Intent intent = new Intent();
+                    // העברת שם משתמש וסיסמה למסכים הבאים באינטנט
                     intent.PutExtra("NAME",data1.username);
                     intent.PutExtra("PASS",data1.password);
-                    intent.SetClass(this,typeof(StartActivity));
+                    intent.SetClass(this,typeof(StartActivity));// מעבר למסך התחל האחרי רישום
                     this.StartActivity(intent);
 
                    
@@ -80,7 +81,7 @@ namespace canproj
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-        public string CreateDB()
+        public string CreateDB()// יצירת דאטהבייס חדש אם לא קיים
         {
             var output = "";
             output += "Creating Databse if it doesnt exists";

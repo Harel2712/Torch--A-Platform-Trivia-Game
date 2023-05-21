@@ -45,7 +45,6 @@ ToastLength.Short).Show();
                 player.Start();
             });
 
-            // ראה הסבר בהמשך
             return StartCommandResult.Sticky;
         }
 

@@ -17,19 +17,19 @@ namespace canproj
 
     internal class NotificationReceiver: BroadcastReceiver
     {
-        public override void OnReceive(Context context, Intent intent)
+        public override void OnReceive(Context context, Intent intent) // מחלקה ליצירת הודעות
         {
-            NotificationChannel channel = new NotificationChannel("channel_id", "Channel Name", NotificationImportance.Default);
+            NotificationChannel channel = new NotificationChannel("channel_id", "Channel Name", NotificationImportance.Default);// יצירת הודעה
             NotificationManager notificationManager = (NotificationManager)context.GetSystemService(Context.NotificationService);
             notificationManager.CreateNotificationChannel(channel);
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "channel_id")
-            .SetSmallIcon(Resource.Drawable.torch)
-            .SetContentTitle("Hello!")
-            .SetContentText("You are close to beat your all time best score!")
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "channel_id") //בניית הודעה
+            .SetSmallIcon(Resource.Drawable.torch)// תמונה
+            .SetContentTitle("Hello!")// כותרת
+            .SetContentText("You are close to beat your all time best score!")// טקסט
             .SetAutoCancel(true);
 
             Notification notification = builder.Build();
-            notificationManager.Notify(1, notification);
+            notificationManager.Notify(1, notification);// הפעלה
 
         }
     }

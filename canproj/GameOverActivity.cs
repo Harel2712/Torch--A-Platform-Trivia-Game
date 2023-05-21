@@ -17,7 +17,7 @@ using Context = Android.Content.Context;
 
 namespace canproj
 {
-    [Activity(Label = "GameOverActivity", Name = "android.permission.SCHEDULE_EXACT_ALARM")]
+    [Activity(Label = "GameOverActivity", Name = "android.permission.SCHEDULE_EXACT_ALARM")]// הוספה למניפסט הרשאה ליצירת הודעה
     public class GameOverActivity : Activity
     {
         Button restart;
@@ -26,6 +26,7 @@ namespace canproj
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.GameOverXML);
 
+            // עצירת סרוויס מוזיקה
             Intent mintent = new Intent(this, typeof(MediaService));
             StopService(mintent);
 
@@ -41,7 +42,7 @@ namespace canproj
             var data1 = data.Where(x => x.username == name).FirstOrDefault();
 
 
-            
+            // יצירת הודעה
             NotificationChannel channel = new NotificationChannel("channel_id", "Channel Name", NotificationImportance.Default);
             NotificationManager notificationManager = (NotificationManager)this.GetSystemService(Context.NotificationService);
             notificationManager.CreateNotificationChannel(channel);
@@ -55,15 +56,15 @@ namespace canproj
             notificationManager.Notify(1, notification);
 
             //alarm manager use- יצירת הודעה שהמתשמש קרוב לשבור את השיא שלו אחרי שעה שהוא משחק
-            Intent intent = new Intent(this, typeof(NotificationReceiver));
-            PendingIntent pendingIntent = PendingIntent.GetBroadcast(this, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
-            AlarmManager alarmManager = (AlarmManager)this.GetSystemService(AlarmService);
-            var calendar = Calendar.Instance;
+            Intent intent = new Intent(this, typeof(NotificationReceiver));// שימוש במחלקת הודעות
+            PendingIntent pendingIntent = PendingIntent.GetBroadcast(this, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);// שימוש באינטנט המחכה להפעלת הברודקאסט של הודעה שיצרתי
+            AlarmManager alarmManager = (AlarmManager)this.GetSystemService(AlarmService);// יצירת אלרם מנג'ר
+            var calendar = Calendar.Instance;// יצירת משתנה של זמן
             calendar.TimeInMillis = Java.Lang.JavaSystem.CurrentTimeMillis();
-            calendar.Add(CalendarField.Hour, 1);
-            if (data1.score - data1.CurrentScore < 5)
+            calendar.Add(CalendarField.Hour, 1);// קביעה מתי להפעיל את ההודעה- כעבור שעה
+            if (data1.score - data1.CurrentScore < 5)// התנאי להפעלוץ ההודעה- אם המשתמש קרוב לשבור שיא
             {
-                alarmManager.SetExact(AlarmType.RtcWakeup, calendar.TimeInMillis, pendingIntent);
+                alarmManager.SetExact(AlarmType.RtcWakeup, calendar.TimeInMillis, pendingIntent);// הפעלת הודעה עם אלארם מנג'ר
             }
 
             data1.CurrentScore = 0;
@@ -73,7 +74,7 @@ namespace canproj
            
         }
 
-        private void Restart_Click(object sender, EventArgs e)
+        private void Restart_Click(object sender, EventArgs e)// מעבר חזרה לתחילת המשחק
         {
             string name = Intent.GetStringExtra("UNAME");
             Intent move = new Intent();

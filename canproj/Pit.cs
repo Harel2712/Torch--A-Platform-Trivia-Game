@@ -13,7 +13,7 @@ using static Android.Graphics.Paint;
 
 namespace canproj
 {
-    internal class Pit
+    internal class Pit // מחלקה ליצירת אובייקט מכשול מסוג בור
     {
         Bitmap pit;
         int x;

@@ -14,8 +14,8 @@ namespace canproj
 {
     internal class UserAdapter:BaseAdapter<LoginTable>
     {
-        private List<LoginTable> userList;
-        private LayoutInflater layoutInflater;
+        private List<LoginTable> userList;// רשימה
+        private LayoutInflater layoutInflater;// משתנה לניפוח הרשימה
 
         public UserAdapter(Context context, List<LoginTable> userList)
         {
@@ -23,17 +23,17 @@ namespace canproj
             this.layoutInflater = LayoutInflater.From(context);
         }
 
-        public override int Count
+        public override int Count// ספירת אורך הליסט
         {
             get { return userList.Count; }
         }
 
-        public override LoginTable this[int position]
+        public override LoginTable this[int position]// הרשימה במקום הפוזישן
         {
             get { return userList[position]; }
         }
 
-        public override long GetItemId(int position)
+        public override long GetItemId(int position)// קבל האיי די של המיקום
         {
             return position;
         }
@@ -41,12 +41,12 @@ namespace canproj
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             ViewHolder viewHolder;
-            if (convertView == null)
+            if (convertView == null) // יצירת אופציה לצפייה בליסט
             {
                 convertView = layoutInflater.Inflate(Resource.Layout.XMLUserAdapter, parent, false);
                 viewHolder = new ViewHolder();
-                viewHolder.NameTextView = convertView.FindViewById<TextView>(Resource.Id.name_text_view);
-                viewHolder.EmailTextView = convertView.FindViewById<TextView>(Resource.Id.score_text_view);
+                viewHolder.NameTextView = convertView.FindViewById<TextView>(Resource.Id.name_text_view);// הצגת השם
+                viewHolder.EmailTextView = convertView.FindViewById<TextView>(Resource.Id.score_text_view);// הצגת הניקוד
                 convertView.Tag = viewHolder;
             }
             else
@@ -55,7 +55,8 @@ namespace canproj
             }
 
             LoginTable user = userList[position];
-            viewHolder.NameTextView.Text = position+1+ ". " +user.username;
+            // הזנת ערכים על פי הליסט
+            viewHolder.NameTextView.Text = position+1+ ". " +user.username; 
             viewHolder.EmailTextView.Text = "score: " + user.score;
 
 

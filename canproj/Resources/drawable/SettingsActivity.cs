@@ -30,7 +30,7 @@ namespace canproj.Resources.drawable
             seekbar = FindViewById<SeekBar>(Resource.Id.sb);
 
             btryTv = FindViewById<TextView>(Resource.Id.textViewBtry);
-            bdBattery=new BroadcastBattery(btryTv);
+            bdBattery=new BroadcastBattery(btryTv);// הגדרת ברודקאסט בטריה
 
             audioManager =(AudioManager)GetSystemService(Context.AudioService);
             int max = audioManager.GetStreamMaxVolume(Stream.Music);
@@ -53,18 +53,18 @@ namespace canproj.Resources.drawable
 
         private void Seekbar_ProgressChanged(object sender, SeekBar.ProgressChangedEventArgs e)
         {
-            audioManager.SetStreamVolume(Stream.Music, e.Progress, VolumeNotificationFlags.PlaySound);
+            audioManager.SetStreamVolume(Stream.Music, e.Progress, VolumeNotificationFlags.PlaySound);// שינוי עוצמת המוזיקה כאשר מזיזים את הסיקבר
         }
 
         protected override void OnResume()
         {
             base.OnResume();
            
-            RegisterReceiver(bdBattery, new IntentFilter(Intent.ActionBatteryChanged));
+            RegisterReceiver(bdBattery, new IntentFilter(Intent.ActionBatteryChanged));// שינוי האחוזים המוצגים כאשר הבטריה משתנה
         }
         protected override void OnPause()
         {
-            UnregisterReceiver(bdBattery);
+            UnregisterReceiver(bdBattery);// עצירת הקריאה
             base.OnPause();
         }
     }

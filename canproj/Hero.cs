@@ -26,13 +26,7 @@ namespace canproj
             this.y = y;
             this.Character = character;
         }
-        //public bool CheckCollisons(Monster monster)// בדיקה המחזירה אמת או שקר האם הדמות התנגשה עם מפלצת
-        //{
-        //    if(x+60==monster.GetX()-40 && y-60==monster.GetY()+40)
-        //        return true;
-        //    else
-        //        return false;
-        //}
+      
         public float GetX()// קבלת מיקום Y
         {
             return x;

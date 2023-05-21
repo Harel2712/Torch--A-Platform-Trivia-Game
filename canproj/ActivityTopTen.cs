@@ -26,20 +26,22 @@ namespace canproj
             SetContentView(Resource.Layout.XMLTopTen);
             
             string dpPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "user.db3");
-            var db = new SQLiteConnection(dpPath);
+            var db = new SQLiteConnection(dpPath);// קריאה למסד הנתונים
 
 
 
 
 
-            List<LoginTable> users = db.Table<LoginTable>().ToList();
-            users.Sort((a, b) => b.score.CompareTo(a.score));
-            
+            List<LoginTable> users = db.Table<LoginTable>().ToList();// יצירת לליסט ממסד הנתונים
+            users.Sort((a, b) => b.score.CompareTo(a.score)); // סידור הליסט מהגדול לקטן
+
+            users = users.Take(10).ToList();// קיצור הליסט רק לעשרת השחקנים עם הניקוד הכי גבוה (TOPTEN)
+
             listnames = FindViewById<ListView>(Resource.Id.listview);
             
-            UserAdapter adapter = new UserAdapter(this, users);
+            UserAdapter adapter = new UserAdapter(this, users);// יצירת אובייקט של האדפטר להצגה בליסט ויו
 
-            listnames.Adapter = adapter;
+            listnames.Adapter = adapter;// השמה של האדפטר בליסט ויו
          
 
 

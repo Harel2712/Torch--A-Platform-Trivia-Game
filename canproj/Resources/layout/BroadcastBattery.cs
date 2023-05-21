@@ -13,20 +13,19 @@ using System.Text;
 namespace canproj.Resources.layout
 {
 
-    [BroadcastReceiver(Enabled = true, Exported = true)]
-    [IntentFilter(new[] { Intent.ActionBatteryChanged })]
+    [BroadcastReceiver(Enabled = true, Exported = true)]// הוספה למניפסט
+    [IntentFilter(new[] { Intent.ActionBatteryChanged })]// מעביר באינטנט את אחוז הבטריה כאשר היא משתנה
 
-    public class BroadcastBattery : BroadcastReceiver
+    public class BroadcastBattery : BroadcastReceiver// ירושה מברודקאסטרסיבר
     {
         public TextView tv;
-        public int batteryLevel { get; set; }
 
        
 
-        public BroadcastBattery()
+        public BroadcastBattery()// empty constuctor
         {
         }
-        public BroadcastBattery(TextView tv)
+        public BroadcastBattery(TextView tv)// constuctor, gets a textview to show the battery level
         {
             this.tv = tv;
         }
@@ -35,13 +34,11 @@ namespace canproj.Resources.layout
 
 
 
-            int bl = intent.GetIntExtra("level", 0);
-
-            this.batteryLevel = bl;
+            int bl = intent.GetIntExtra("level", 0);// מקבל אחוזי בטריה
 
             if (tv != null)
             {
-                tv.Text = "battery level: " + bl.ToString() + "%";
+                tv.Text = "battery level: " + bl.ToString() + "%";// מציג בטקסט ויו
             }
 
         }

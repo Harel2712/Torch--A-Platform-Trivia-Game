@@ -32,7 +32,7 @@ namespace canproj
         public void Setcoin(Bitmap coin) { this.coin = coin; }
         public void setx(int x) { this.x = x; } 
         
-        public int HowMuchScore()
+        public int HowMuchScore()// קביעה כמה נקודות צריך להוסיף לפי גודל המטבע
         {
             if (this.IsBig)
                 return 3;
