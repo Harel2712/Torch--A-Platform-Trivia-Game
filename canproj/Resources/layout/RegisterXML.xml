@@ -2,32 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+     android:background="@drawable/spacebg">
 
     <TextView
-        android:text="Register"
+          android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="REGISTER"
         android:textSize="30dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fontFamily="casual"/> 
+        android:fontFamily="sans-serif"/> 
     <EditText
+         android:background="@android:color/white"
+        android:textColor="@android:color/white"
         android:hint="User name"
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/usernamer"/>
     <EditText
+        android:background="@android:color/white"
+        android:textColor="@android:color/white"
         android:hint="Password"
         android:textSize="30dp"
-        android:layout_width="wrap_content"
+        android:layout_width="144.5dp"
         android:layout_height="match_parent"
         android:id="@+id/passwordr"/>
     <Button
         android:text="register"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="130dp"
         android:id="@+id/btncreater"
-        android:backgroundTint="#00870B"/>
+         android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
     
     
 </LinearLayout>

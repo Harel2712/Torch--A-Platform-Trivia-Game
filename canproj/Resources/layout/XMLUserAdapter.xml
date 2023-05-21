@@ -4,25 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="70dp"
+     android:background="@drawable/spacebg">
 
     <TextView
+        android:gravity="center"
         android:id="@+id/name_text_view"
-        android:layout_width="179.5dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello, World!"
+        android:text="Name"
         android:textSize="24sp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         />
 
     <TextView
+        android:gravity="center"
+        android:textColor="@android:color/holo_orange_dark"
         android:id="@+id/score_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-         android:textColor="@android:color/black"
-                android:text="Hello, World!"
+  
+        android:text="Score"
 
        />
 </LinearLayout>

@@ -5,39 +5,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/spacebg">
     <TextView
-        android:text="Login"
+        android:gravity="center"
+        android:text="LOGIN"
+        android:textColor="@android:color/holo_orange_dark"
         android:textSize="80px"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-    android:fontFamily="casual"/>
+        android:fontFamily="sans-serif"
+        
+       
+       />
     <EditText
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/white"
         android:hint="User name"
         android:textSize="30dp"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-    android:id="@+id/txtusername"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/txtusername"
+        android:gravity="center"/>
     <EditText
+        android:background="@android:color/white"
+        android:textColor="@android:color/white"
         android:hint="Password"
         android:textSize="30dp"
-        android:layout_width="wrap_content"
+        android:layout_width="144.5dp"
         android:layout_height="match_parent"
         android:password="true"
-        android:id="@+id/txtpassword"/>
+        android:id="@+id/txtpassword"
+        android:layout_marginRight="0.0dp" />
     <Button
         android:text="Not logged yet?  Register HERE"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:id="@+id/btncreate"
+        android:textColor="@android:color/white"
         android:backgroundTint="#460087"
         />
     <Button
         android:text="login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="120dp"
         android:id="@+id/btnsign"
-        android:backgroundTint="#00870B"
+          android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_orange_dark"
         />
 
 </LinearLayout>

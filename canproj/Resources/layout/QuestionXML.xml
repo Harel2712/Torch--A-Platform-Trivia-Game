@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+     android:background="@drawable/metalbg"
 >
     <TextView
         android:layout_width="wrap_content"
@@ -14,24 +15,32 @@
         android:id="@+id/questText"
 />
     <Button
+          android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"
         android:id="@+id/option1"
         android:textSize="30sp"/>
      <Button
+          android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"
         android:id="@+id/option2"
         android:textSize="30sp"/>
      <Button
+          android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"
         android:textSize="30sp"
         android:id="@+id/option3"/>
      <Button
+          android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"

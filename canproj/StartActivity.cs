@@ -23,7 +23,7 @@ namespace canproj
     [Activity(Label = "StartActivity")]
     public class StartActivity : Activity
     {
-        Button move;
+        Button move,top;
         Animation animFadeIn;
         ImageView ImageView;
 
@@ -33,10 +33,12 @@ namespace canproj
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.StartXML);
             move = FindViewById<Button>(Resource.Id.btnRight);
+            top = FindViewById<Button>(Resource.Id.btntop);
             animFadeIn = AnimationUtils.LoadAnimation(this, Resource.Animation.anim1);// תמונה לאנימציה
             ImageView = FindViewById<ImageView>(Resource.Id.imageView1);
             ImageView.StartAnimation(animFadeIn);// התחלת אנימציה פייד אין של לוגו המשחק
             move.Click += Move_Click;
+            top.Click += Top_Click;
 
 
             BatteryManager batteryManager = (BatteryManager)GetSystemService(BatteryService);// שימוש בבטריה
@@ -60,6 +62,13 @@ namespace canproj
             var data1 = data.Where(x => x.username == name ).FirstOrDefault();
             data1.CurrentScore = 0;// החזרת הניקוד העכשווי ל0
             db.Update(data1);
+        }
+
+        private void Top_Click(object sender, EventArgs e)// כפתור מעבר לטופ 10
+        {
+           Intent intent = new Intent(this,typeof(ActivityTopTen));
+            this.StartActivity(intent);
+           
         }
 
         private void Move_Click(object sender, EventArgs e)// אינטנט מעבר למשחק

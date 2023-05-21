@@ -19,6 +19,7 @@ namespace canproj
     public class ActivityTopTen : Activity
     {
         ListView listnames;
+        Button back;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -29,7 +30,9 @@ namespace canproj
             var db = new SQLiteConnection(dpPath);// קריאה למסד הנתונים
 
 
+            back = FindViewById<Button>(Resource.Id.btnstart);
 
+            back.Click += Back_Click;
 
 
             List<LoginTable> users = db.Table<LoginTable>().ToList();// יצירת לליסט ממסד הנתונים
@@ -57,6 +60,11 @@ namespace canproj
 
         }
 
-       
+        private void Back_Click(object sender, EventArgs e)
+        {
+            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());// סגירת האפליקציה
+
+
+        }
     }
 }

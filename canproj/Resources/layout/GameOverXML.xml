@@ -8,8 +8,11 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:orientation="vertical"
+    android:background="@drawable/spacebg"
     >
     <TextView
+         android:textColor="@android:color/white"
+         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="200px"
         android:text="GAME OVER"
@@ -18,12 +21,15 @@
         android:textSize="70px"
 />
     <Button
+         android:textColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="250px"
         android:id="@+id/btnRestart"
         android:text="TAP TO RESTART"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btnRestart" 
+                android:backgroundTint="@android:color/holo_orange_dark"
+
        
 >
 

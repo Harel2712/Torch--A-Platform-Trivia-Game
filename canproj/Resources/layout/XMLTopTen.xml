@@ -4,13 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+     android:background="@drawable/spacebg">
+     <TextView
+        android:gravity="center"
+        android:text="TOP TEN PLAYERS"
+          android:textColor="@android:color/white"
+        android:textSize="80px"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif"
+        
+       
+       />
 <ListView 
 android:minWidth="25px" 
 android:minHeight="25px" 
 android:layout_width="match_parent" 
-android:layout_height="match_parent"
+android:layout_height="200dp"
  android:id="@+id/listview" />
+      <Button
+        android:layout_width="match_parent"
+        android:layout_height="250px"
+        android:id="@+id/btnstart"
+        android:text="end game"
+        android:layout_centerHorizontal="true"
+         android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_purple">
+
+    </Button>
 
 </LinearLayout>
